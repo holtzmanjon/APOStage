@@ -317,6 +317,7 @@ class getswitchname:
 class getswitchvalue:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
+        print('getswitchvalue on_get')
         if not switch_dev.connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
@@ -511,6 +512,7 @@ class setswitchname:
 class setswitchvalue:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
+        print('setswitchvalue on_put')
         if not switch_dev.connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json

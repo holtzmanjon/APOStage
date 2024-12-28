@@ -519,17 +519,20 @@ class setswitchvalue:
             return
         
         idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        print('setswitchvalue on_put')
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'ID {idstr} not a valid integer.')).json
             return
+        print('setswitchvalue on_put')
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
+        print('setswitchvalue on_put')
         valuestr = get_request_field('Value', req)      # Raises 400 bad request if missing
         try:
             value = float(valuestr)
@@ -537,11 +540,13 @@ class setswitchvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Value {valuestr} not a valid number.')).json
             return
+        print('setswitchvalue on_put')
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
+        print('setswitchvalue on_put')
         try:
             # -----------------------------
             switch_dev.set_value(id,value)

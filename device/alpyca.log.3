@@ -1,0 +1,516 @@
+2024-12-28T15:01:35.388 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
+2024-12-28T15:01:44.330 INFO 10.0.0.201 -> GET /api/v1/switch/0/interfaceversion?ClientID=1&ClientTransactionID=763
+2024-12-28T15:01:44.330 INFO 10.0.0.201 <- 3
+2024-12-28T15:01:44.344 INFO 10.0.0.201 -> GET /api/v1/switch/0/connecting?ClientID=1&ClientTransactionID=764
+2024-12-28T15:01:44.344 INFO 10.0.0.201 <- True
+2024-12-28T15:01:44.348 INFO 10.0.0.201 -> GET /api/v1/switch/0/connecting?ClientID=1&ClientTransactionID=765
+2024-12-28T15:01:44.348 INFO 10.0.0.201 <- True
+2024-12-28T15:01:44.356 INFO 10.0.0.201 -> GET /api/v1/switch/0/connected?ClientID=1&ClientTransactionID=766
+2024-12-28T15:01:44.356 INFO 10.0.0.201 <- True
+2024-12-28T15:01:44.364 INFO 10.0.0.201 -> GET /api/v1/switch/0/connected?ClientID=1&ClientTransactionID=767
+2024-12-28T15:01:44.365 INFO 10.0.0.201 <- True
+2024-12-28T15:01:44.368 INFO 10.0.0.201 -> GET /api/v1/switch/0/description?ClientID=1&ClientTransactionID=768
+2024-12-28T15:01:44.369 INFO 10.0.0.201 <- LTS Stage
+2024-12-28T15:01:44.378 INFO 10.0.0.201 -> GET /api/v1/switch/0/driverinfo?ClientID=1&ClientTransactionID=769
+2024-12-28T15:01:44.378 INFO 10.0.0.201 <- Alpaca Sample Device
+Implements ISwitch
+ASCOM Initiative
+2024-12-28T15:01:44.384 INFO 10.0.0.201 -> GET /api/v1/switch/0/driverversion?ClientID=1&ClientTransactionID=770
+2024-12-28T15:01:44.385 INFO 10.0.0.201 <- 1.0.0
+2024-12-28T15:01:44.396 INFO 10.0.0.201 -> GET /api/v1/switch/0/name?ClientID=1&ClientTransactionID=771
+2024-12-28T15:01:44.396 INFO 10.0.0.201 <- Thorlabs LTS Stage
+2024-12-28T15:01:44.401 INFO 10.0.0.201 -> GET /api/v1/switch/0/supportedactions?ClientID=1&ClientTransactionID=772
+2024-12-28T15:01:44.401 INFO 10.0.0.201 <- []
+2024-12-28T15:01:44.414 INFO 10.0.0.201 -> GET /api/v1/switch/0/devicestate?ClientID=1&ClientTransactionID=773
+2024-12-28T15:01:44.414 INFO 10.0.0.201 <- []
+2024-12-28T15:01:44.422 INFO 10.0.0.201 -> GET /api/v1/switch/0/maxswitch?ClientID=1&ClientTransactionID=774
+2024-12-28T15:01:44.422 INFO 10.0.0.201 <- 1
+2024-12-28T15:01:44.433 INFO 10.0.0.201 -> GET /api/v1/switch/0/maxswitch?ClientID=1&ClientTransactionID=775
+2024-12-28T15:01:44.434 INFO 10.0.0.201 <- 1
+2024-12-28T15:01:44.447 INFO 10.0.0.201 -> GET /api/v1/switch/0/canwrite?ClientID=1&ClientTransactionID=776&Id=-1
+2024-12-28T15:01:44.448 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.455 INFO 10.0.0.201 -> GET /api/v1/switch/0/canwrite?ClientID=1&ClientTransactionID=777&Id=2
+2024-12-28T15:01:44.455 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.463 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitch?ClientID=1&ClientTransactionID=778&Id=-1
+2024-12-28T15:01:44.464 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.469 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitch?ClientID=1&ClientTransactionID=779&Id=2
+2024-12-28T15:01:44.470 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.480 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchdescription?ClientID=1&ClientTransactionID=780&Id=-1
+2024-12-28T15:01:44.480 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.485 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchdescription?ClientID=1&ClientTransactionID=781&Id=2
+2024-12-28T15:01:44.485 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.496 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=782&Id=-1
+2024-12-28T15:01:44.497 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.506 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=783&Id=2
+2024-12-28T15:01:44.506 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.514 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchvalue?ClientID=1&ClientTransactionID=784&Id=-1
+2024-12-28T15:01:44.514 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.523 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchvalue?ClientID=1&ClientTransactionID=785&Id=2
+2024-12-28T15:01:44.523 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.532 INFO 10.0.0.201 -> GET /api/v1/switch/0/maxswitchvalue?ClientID=1&ClientTransactionID=786&Id=-1
+2024-12-28T15:01:44.532 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.540 INFO 10.0.0.201 -> GET /api/v1/switch/0/maxswitchvalue?ClientID=1&ClientTransactionID=787&Id=2
+2024-12-28T15:01:44.541 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.549 INFO 10.0.0.201 -> GET /api/v1/switch/0/minswitchvalue?ClientID=1&ClientTransactionID=788&Id=-1
+2024-12-28T15:01:44.549 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.555 INFO 10.0.0.201 -> GET /api/v1/switch/0/minswitchvalue?ClientID=1&ClientTransactionID=789&Id=2
+2024-12-28T15:01:44.556 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.563 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setswitch
+2024-12-28T15:01:44.564 INFO 10.0.0.201 -> {'Id': '-1', 'State': 'False', 'ClientID': '1', 'ClientTransactionID': '790'}
+2024-12-28T15:01:44.576 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setswitch
+2024-12-28T15:01:44.578 INFO 10.0.0.201 -> {'Id': '2', 'State': 'False', 'ClientID': '1', 'ClientTransactionID': '791'}
+2024-12-28T15:01:44.585 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setswitchvalue
+2024-12-28T15:01:44.585 INFO 10.0.0.201 -> {'Id': '-1', 'Value': '0', 'ClientID': '1', 'ClientTransactionID': '792'}
+2024-12-28T15:01:44.592 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setswitchvalue
+2024-12-28T15:01:44.594 INFO 10.0.0.201 -> {'Id': '2', 'Value': '0', 'ClientID': '1', 'ClientTransactionID': '793'}
+2024-12-28T15:01:44.600 INFO 10.0.0.201 -> GET /api/v1/switch/0/switchstep?ClientID=1&ClientTransactionID=794&Id=-1
+2024-12-28T15:01:44.600 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.608 INFO 10.0.0.201 -> GET /api/v1/switch/0/switchstep?ClientID=1&ClientTransactionID=795&Id=2
+2024-12-28T15:01:44.608 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.615 INFO 10.0.0.201 -> GET /api/v1/switch/0/canasync?ClientID=1&ClientTransactionID=796&Id=-1
+2024-12-28T15:01:44.616 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.633 INFO 10.0.0.201 -> GET /api/v1/switch/0/canasync?ClientID=1&ClientTransactionID=797&Id=2
+2024-12-28T15:01:44.634 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.644 INFO 10.0.0.201 -> PUT /api/v1/switch/0/cancelasync
+2024-12-28T15:01:44.645 INFO 10.0.0.201 -> {'Id': '-1', 'ClientID': '1', 'ClientTransactionID': '798'}
+2024-12-28T15:01:44.651 INFO 10.0.0.201 -> PUT /api/v1/switch/0/cancelasync
+2024-12-28T15:01:44.651 INFO 10.0.0.201 -> {'Id': '2', 'ClientID': '1', 'ClientTransactionID': '799'}
+2024-12-28T15:01:44.661 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setasync
+2024-12-28T15:01:44.661 INFO 10.0.0.201 -> {'Id': '-1', 'State': 'False', 'ClientID': '1', 'ClientTransactionID': '800'}
+2024-12-28T15:01:44.668 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setasync
+2024-12-28T15:01:44.668 INFO 10.0.0.201 -> {'Id': '2', 'State': 'False', 'ClientID': '1', 'ClientTransactionID': '801'}
+2024-12-28T15:01:44.678 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setasyncvalue
+2024-12-28T15:01:44.678 INFO 10.0.0.201 -> {'Id': '-1', 'Value': '0', 'ClientID': '1', 'ClientTransactionID': '802'}
+2024-12-28T15:01:44.685 INFO 10.0.0.201 -> PUT /api/v1/switch/0/setasyncvalue
+2024-12-28T15:01:44.686 INFO 10.0.0.201 -> {'Id': '2', 'Value': '0', 'ClientID': '1', 'ClientTransactionID': '803'}
+2024-12-28T15:01:44.696 INFO 10.0.0.201 -> GET /api/v1/switch/0/statechangecomplete?ClientID=1&ClientTransactionID=804&Id=-1
+2024-12-28T15:01:44.696 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.702 INFO 10.0.0.201 -> GET /api/v1/switch/0/statechangecomplete?ClientID=1&ClientTransactionID=805&Id=2
+2024-12-28T15:01:44.702 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.710 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=806&Id=-100
+2024-12-28T15:01:44.710 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.717 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=807&Id=-99
+2024-12-28T15:01:44.717 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.725 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=808&Id=-98
+2024-12-28T15:01:44.725 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.731 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=809&Id=-97
+2024-12-28T15:01:44.731 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.734 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=810&Id=-96
+2024-12-28T15:01:44.734 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.738 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=811&Id=-95
+2024-12-28T15:01:44.738 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.741 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=812&Id=-94
+2024-12-28T15:01:44.741 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.746 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=813&Id=-93
+2024-12-28T15:01:44.746 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.749 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=814&Id=-92
+2024-12-28T15:01:44.749 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.753 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=815&Id=-91
+2024-12-28T15:01:44.753 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.756 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=816&Id=-90
+2024-12-28T15:01:44.756 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.759 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=817&Id=-89
+2024-12-28T15:01:44.759 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.763 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=818&Id=-88
+2024-12-28T15:01:44.763 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.766 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=819&Id=-87
+2024-12-28T15:01:44.766 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.770 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=820&Id=-86
+2024-12-28T15:01:44.770 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.773 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=821&Id=-85
+2024-12-28T15:01:44.773 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.776 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=822&Id=-84
+2024-12-28T15:01:44.776 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.780 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=823&Id=-83
+2024-12-28T15:01:44.780 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.783 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=824&Id=-82
+2024-12-28T15:01:44.783 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.786 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=825&Id=-81
+2024-12-28T15:01:44.786 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.790 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=826&Id=-80
+2024-12-28T15:01:44.790 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.794 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=827&Id=-79
+2024-12-28T15:01:44.794 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.797 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=828&Id=-78
+2024-12-28T15:01:44.797 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.800 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=829&Id=-77
+2024-12-28T15:01:44.800 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.803 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=830&Id=-76
+2024-12-28T15:01:44.803 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.806 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=831&Id=-75
+2024-12-28T15:01:44.806 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.809 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=832&Id=-74
+2024-12-28T15:01:44.809 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.813 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=833&Id=-73
+2024-12-28T15:01:44.813 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.816 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=834&Id=-72
+2024-12-28T15:01:44.816 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.819 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=835&Id=-71
+2024-12-28T15:01:44.819 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.822 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=836&Id=-70
+2024-12-28T15:01:44.823 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.826 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=837&Id=-69
+2024-12-28T15:01:44.826 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.830 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=838&Id=-68
+2024-12-28T15:01:44.830 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.832 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=839&Id=-67
+2024-12-28T15:01:44.832 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.835 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=840&Id=-66
+2024-12-28T15:01:44.836 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.838 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=841&Id=-65
+2024-12-28T15:01:44.839 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.842 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=842&Id=-64
+2024-12-28T15:01:44.842 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.846 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=843&Id=-63
+2024-12-28T15:01:44.846 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.849 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=844&Id=-62
+2024-12-28T15:01:44.849 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.852 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=845&Id=-61
+2024-12-28T15:01:44.852 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.855 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=846&Id=-60
+2024-12-28T15:01:44.856 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.858 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=847&Id=-59
+2024-12-28T15:01:44.859 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.862 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=848&Id=-58
+2024-12-28T15:01:44.863 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.866 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=849&Id=-57
+2024-12-28T15:01:44.866 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.869 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=850&Id=-56
+2024-12-28T15:01:44.869 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.872 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=851&Id=-55
+2024-12-28T15:01:44.872 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.875 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=852&Id=-54
+2024-12-28T15:01:44.875 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.879 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=853&Id=-53
+2024-12-28T15:01:44.879 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.882 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=854&Id=-52
+2024-12-28T15:01:44.882 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.885 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=855&Id=-51
+2024-12-28T15:01:44.885 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.888 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=856&Id=-50
+2024-12-28T15:01:44.889 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.892 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=857&Id=-49
+2024-12-28T15:01:44.892 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.896 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=858&Id=-48
+2024-12-28T15:01:44.896 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.899 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=859&Id=-47
+2024-12-28T15:01:44.899 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.902 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=860&Id=-46
+2024-12-28T15:01:44.902 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.905 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=861&Id=-45
+2024-12-28T15:01:44.905 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.908 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=862&Id=-44
+2024-12-28T15:01:44.908 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.912 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=863&Id=-43
+2024-12-28T15:01:44.912 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.915 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=864&Id=-42
+2024-12-28T15:01:44.915 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.918 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=865&Id=-41
+2024-12-28T15:01:44.918 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.921 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=866&Id=-40
+2024-12-28T15:01:44.921 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.924 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=867&Id=-39
+2024-12-28T15:01:44.924 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.928 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=868&Id=-38
+2024-12-28T15:01:44.928 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.931 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=869&Id=-37
+2024-12-28T15:01:44.931 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.934 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=870&Id=-36
+2024-12-28T15:01:44.934 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.937 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=871&Id=-35
+2024-12-28T15:01:44.938 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.940 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=872&Id=-34
+2024-12-28T15:01:44.940 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.945 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=873&Id=-33
+2024-12-28T15:01:44.945 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.947 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=874&Id=-32
+2024-12-28T15:01:44.947 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.950 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=875&Id=-31
+2024-12-28T15:01:44.951 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.954 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=876&Id=-30
+2024-12-28T15:01:44.954 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.957 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=877&Id=-29
+2024-12-28T15:01:44.957 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.961 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=878&Id=-28
+2024-12-28T15:01:44.961 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.965 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=879&Id=-27
+2024-12-28T15:01:44.965 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.968 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=880&Id=-26
+2024-12-28T15:01:44.968 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.971 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=881&Id=-25
+2024-12-28T15:01:44.971 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.974 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=882&Id=-24
+2024-12-28T15:01:44.974 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.978 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=883&Id=-23
+2024-12-28T15:01:44.979 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.981 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=884&Id=-22
+2024-12-28T15:01:44.981 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.985 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=885&Id=-21
+2024-12-28T15:01:44.985 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.988 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=886&Id=-20
+2024-12-28T15:01:44.988 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.991 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=887&Id=-19
+2024-12-28T15:01:44.991 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.995 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=888&Id=-18
+2024-12-28T15:01:44.995 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:44.998 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=889&Id=-17
+2024-12-28T15:01:44.998 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.001 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=890&Id=-16
+2024-12-28T15:01:45.001 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.005 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=891&Id=-15
+2024-12-28T15:01:45.005 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.008 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=892&Id=-14
+2024-12-28T15:01:45.008 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.012 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=893&Id=-13
+2024-12-28T15:01:45.012 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.015 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=894&Id=-12
+2024-12-28T15:01:45.015 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.019 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=895&Id=-11
+2024-12-28T15:01:45.019 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.022 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=896&Id=-10
+2024-12-28T15:01:45.022 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.024 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=897&Id=-9
+2024-12-28T15:01:45.025 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.029 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=898&Id=-8
+2024-12-28T15:01:45.029 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.032 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=899&Id=-7
+2024-12-28T15:01:45.032 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.035 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=900&Id=-6
+2024-12-28T15:01:45.035 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.038 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=901&Id=-5
+2024-12-28T15:01:45.038 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.041 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=902&Id=-4
+2024-12-28T15:01:45.041 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.045 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=903&Id=-3
+2024-12-28T15:01:45.045 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.048 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=904&Id=-2
+2024-12-28T15:01:45.048 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.051 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=905&Id=-1
+2024-12-28T15:01:45.052 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.055 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=906&Id=0
+2024-12-28T15:01:45.055 INFO 10.0.0.201 <- Iodine stage
+2024-12-28T15:01:45.062 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchdescription?ClientID=1&ClientTransactionID=907&Id=0
+2024-12-28T15:01:45.062 INFO 10.0.0.201 <- Thorlabs LTS 150
+2024-12-28T15:01:45.067 INFO 10.0.0.201 -> GET /api/v1/switch/0/minswitchvalue?ClientID=1&ClientTransactionID=908&Id=0
+2024-12-28T15:01:45.067 INFO 10.0.0.201 <- 0
+2024-12-28T15:01:45.074 INFO 10.0.0.201 -> GET /api/v1/switch/0/maxswitchvalue?ClientID=1&ClientTransactionID=909&Id=0
+2024-12-28T15:01:45.074 INFO 10.0.0.201 <- 1500
+2024-12-28T15:01:45.103 INFO 10.0.0.201 -> GET /api/v1/switch/0/switchstep?ClientID=1&ClientTransactionID=910&Id=0
+2024-12-28T15:01:45.104 INFO 10.0.0.201 <- 1
+2024-12-28T15:01:45.112 INFO 10.0.0.201 -> GET /api/v1/switch/0/canwrite?ClientID=1&ClientTransactionID=911&Id=0
+2024-12-28T15:01:45.112 INFO 10.0.0.201 <- True
+2024-12-28T15:01:45.123 INFO 10.0.0.201 -> GET /api/v1/switch/0/canasync?ClientID=1&ClientTransactionID=912&Id=0
+2024-12-28T15:01:45.123 INFO 10.0.0.201 <- False
+2024-12-28T15:01:45.127 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitch?ClientID=1&ClientTransactionID=913&Id=0
+2024-12-28T15:01:45.127 INFO 10.0.0.201 <- True
+2024-12-28T15:01:45.638 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchvalue?ClientID=1&ClientTransactionID=914&Id=0
+2024-12-28T15:01:45.640 ERROR DriverException: Switch.Getswitchvalue failed
+Traceback (most recent call last):
+  File "/Users/holtz/git/APOStage/device/switch.py", line 345, in on_get
+    val = switch_dev.get_value(id)
+TypeError: get_value() takes 1 positional argument but 2 were given
+
+2024-12-28T15:01:45.654 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=915&Id=1
+2024-12-28T15:01:45.654 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.658 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=916&Id=2
+2024-12-28T15:01:45.658 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.663 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=917&Id=3
+2024-12-28T15:01:45.663 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.667 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=918&Id=4
+2024-12-28T15:01:45.667 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.670 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=919&Id=5
+2024-12-28T15:01:45.670 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.674 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=920&Id=6
+2024-12-28T15:01:45.674 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.679 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=921&Id=7
+2024-12-28T15:01:45.680 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.683 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=922&Id=8
+2024-12-28T15:01:45.683 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.687 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=923&Id=9
+2024-12-28T15:01:45.687 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.689 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=924&Id=10
+2024-12-28T15:01:45.690 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.693 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=925&Id=11
+2024-12-28T15:01:45.693 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.697 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=926&Id=12
+2024-12-28T15:01:45.697 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.700 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=927&Id=13
+2024-12-28T15:01:45.700 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.704 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=928&Id=14
+2024-12-28T15:01:45.704 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.707 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=929&Id=15
+2024-12-28T15:01:45.707 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.711 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=930&Id=16
+2024-12-28T15:01:45.711 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.714 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=931&Id=17
+2024-12-28T15:01:45.714 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.717 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=932&Id=18
+2024-12-28T15:01:45.717 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.720 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=933&Id=19
+2024-12-28T15:01:45.721 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.724 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=934&Id=20
+2024-12-28T15:01:45.724 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.728 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=935&Id=21
+2024-12-28T15:01:45.728 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.731 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=936&Id=22
+2024-12-28T15:01:45.731 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.734 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=937&Id=23
+2024-12-28T15:01:45.734 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.737 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=938&Id=24
+2024-12-28T15:01:45.738 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.741 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=939&Id=25
+2024-12-28T15:01:45.741 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.745 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=940&Id=26
+2024-12-28T15:01:45.745 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.748 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=941&Id=27
+2024-12-28T15:01:45.748 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.751 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=942&Id=28
+2024-12-28T15:01:45.752 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.755 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=943&Id=29
+2024-12-28T15:01:45.755 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.758 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=944&Id=30
+2024-12-28T15:01:45.758 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.762 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=945&Id=31
+2024-12-28T15:01:45.762 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.765 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=946&Id=32
+2024-12-28T15:01:45.765 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.768 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=947&Id=33
+2024-12-28T15:01:45.768 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.771 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=948&Id=34
+2024-12-28T15:01:45.771 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.774 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=949&Id=35
+2024-12-28T15:01:45.774 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.778 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=950&Id=36
+2024-12-28T15:01:45.779 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.782 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=951&Id=37
+2024-12-28T15:01:45.782 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.785 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=952&Id=38
+2024-12-28T15:01:45.785 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.788 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=953&Id=39
+2024-12-28T15:01:45.788 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.791 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=954&Id=40
+2024-12-28T15:01:45.791 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.796 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=955&Id=41
+2024-12-28T15:01:45.796 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.799 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=956&Id=42
+2024-12-28T15:01:45.799 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.802 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=957&Id=43
+2024-12-28T15:01:45.803 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.805 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=958&Id=44
+2024-12-28T15:01:45.806 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.809 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=959&Id=45
+2024-12-28T15:01:45.809 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.813 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=960&Id=46
+2024-12-28T15:01:45.813 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.816 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=961&Id=47
+2024-12-28T15:01:45.816 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.819 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=962&Id=48
+2024-12-28T15:01:45.819 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.822 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=963&Id=49
+2024-12-28T15:01:45.822 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.825 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=964&Id=50
+2024-12-28T15:01:45.825 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.829 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=965&Id=51
+2024-12-28T15:01:45.830 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.832 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=966&Id=52
+2024-12-28T15:01:45.832 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.836 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=967&Id=53
+2024-12-28T15:01:45.836 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.839 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=968&Id=54
+2024-12-28T15:01:45.839 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.842 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=969&Id=55
+2024-12-28T15:01:45.842 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.846 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=970&Id=56
+2024-12-28T15:01:45.846 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.849 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=971&Id=57
+2024-12-28T15:01:45.849 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.852 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=972&Id=58
+2024-12-28T15:01:45.852 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.855 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=973&Id=59
+2024-12-28T15:01:45.855 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.858 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=974&Id=60
+2024-12-28T15:01:45.858 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.862 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=975&Id=61
+2024-12-28T15:01:45.862 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.865 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=976&Id=62
+2024-12-28T15:01:45.865 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.868 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=977&Id=63
+2024-12-28T15:01:45.868 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.871 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=978&Id=64
+2024-12-28T15:01:45.872 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.874 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=979&Id=65
+2024-12-28T15:01:45.875 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.879 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=980&Id=66
+2024-12-28T15:01:45.879 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.882 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=981&Id=67
+2024-12-28T15:01:45.882 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.885 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=982&Id=68
+2024-12-28T15:01:45.885 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.888 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=983&Id=69
+2024-12-28T15:01:45.888 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.891 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=984&Id=70
+2024-12-28T15:01:45.891 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.895 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=985&Id=71
+2024-12-28T15:01:45.895 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.898 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=986&Id=72
+2024-12-28T15:01:45.898 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.901 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=987&Id=73
+2024-12-28T15:01:45.901 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.905 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=988&Id=74
+2024-12-28T15:01:45.905 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.907 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=989&Id=75
+2024-12-28T15:01:45.908 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.912 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=990&Id=76
+2024-12-28T15:01:45.912 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.914 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=991&Id=77
+2024-12-28T15:01:45.915 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.917 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=992&Id=78
+2024-12-28T15:01:45.918 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.921 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=993&Id=79
+2024-12-28T15:01:45.921 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.924 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=994&Id=80
+2024-12-28T15:01:45.924 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.927 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=995&Id=81
+2024-12-28T15:01:45.928 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.931 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=996&Id=82
+2024-12-28T15:01:45.931 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.934 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=997&Id=83
+2024-12-28T15:01:45.934 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.938 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=998&Id=84
+2024-12-28T15:01:45.938 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.941 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=999&Id=85
+2024-12-28T15:01:45.941 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.945 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1000&Id=86
+2024-12-28T15:01:45.945 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.948 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1001&Id=87
+2024-12-28T15:01:45.948 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.951 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1002&Id=88
+2024-12-28T15:01:45.952 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.955 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1003&Id=89
+2024-12-28T15:01:45.955 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.958 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1004&Id=90
+2024-12-28T15:01:45.958 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.962 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1005&Id=91
+2024-12-28T15:01:45.962 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.965 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1006&Id=92
+2024-12-28T15:01:45.965 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.968 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1007&Id=93
+2024-12-28T15:01:45.968 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.971 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1008&Id=94
+2024-12-28T15:01:45.972 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.974 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1009&Id=95
+2024-12-28T15:01:45.975 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.979 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1010&Id=96
+2024-12-28T15:01:45.979 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.982 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1011&Id=97
+2024-12-28T15:01:45.982 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.985 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1012&Id=98
+2024-12-28T15:01:45.985 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.988 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1013&Id=99
+2024-12-28T15:01:45.988 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:45.991 INFO 10.0.0.201 -> GET /api/v1/switch/0/getswitchname?ClientID=1&ClientTransactionID=1014&Id=100
+2024-12-28T15:01:45.991 ERROR InvalidValueException: Id " + idstr + " not in range.
+2024-12-28T15:01:46.003 INFO 10.0.0.201 -> GET /api/v1/switch/0/connecting?ClientID=1&ClientTransactionID=1015
+2024-12-28T15:01:46.004 INFO 10.0.0.201 <- True
+2024-12-28T15:01:46.010 INFO 10.0.0.201 -> GET /api/v1/switch/0/connected?ClientID=1&ClientTransactionID=1016
+2024-12-28T15:01:46.010 INFO 10.0.0.201 <- True

@@ -518,6 +518,7 @@ class setswitchvalue:
                             NotConnectedException()).json
             return
         
+        print('req: ',req)
         idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
         print('setswitchvalue on_put')
         try:

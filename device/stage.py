@@ -39,7 +39,7 @@ class Stage() :
     def get_maxvalue(self,id) :
         return self.maxswitchvalue
 
-    def set_value(self,val) :
+    def set_value(self,id,val) :
         print('setting value',val)
         self.lts_stage.move(float(val))
 

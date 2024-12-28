@@ -323,6 +323,7 @@ class getswitchvalue:
                             NotConnectedException()).json
             return
         
+        print('req: ',req)
         idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)

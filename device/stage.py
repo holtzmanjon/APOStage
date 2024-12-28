@@ -5,12 +5,12 @@ class Stage() :
         """  Initialize dome properties and capabilities
         """
         print('init')
-        self.connected = True
         self.maxswitch = 1
         self.description = 'Thorlabs LTS 150'
         self.name = 'Iodine stage'
         self.minswitchvalue = 0
         self.maxswitchvalue = 1500
+        self.connect()
 
     def connect(self) :
         print('connect')

@@ -47,6 +47,7 @@ class Stage() :
         return True
 
     def get_value(self,id) :
+        print('getting value')
         return self.lts_stage.get_position()
 
     def get_step(self,id) :

@@ -46,7 +46,7 @@ class Stage() :
     def getswitch(self,id) :
         return True
 
-    def get_value(self) :
+    def get_value(self,id) :
         return self.lts_stage.get_position()
 
     def get_step(self,id) :

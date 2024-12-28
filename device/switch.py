@@ -542,7 +542,7 @@ class setswitchvalue:
 
         try:
             # -----------------------------
-            switch_dev.set_value(id)
+            switch_dev.set_value(id,value)
             # -----------------------------
             resp.text = MethodResponse(req).json
         except Exception as ex:

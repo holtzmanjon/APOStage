@@ -13,8 +13,8 @@ class Stage() :
         self.maxswitchvalue = 1500
 
     def connect(self) :
-#        self.lts_stage=lts.ThorlabsStage()
         print('connect')
+        self.lts_stage=lts.ThorlabsStage()
         self.connected = True
 
     def connected(self,state) :
@@ -40,14 +40,14 @@ class Stage() :
         return self.maxswitchvalue
 
     def set_value(self,val) :
-#        self.lts_stage.move(float(val))
-        print('setting value')
+        print('setting value',val)
+        self.lts_stage.move(float(val))
 
     def getswitch(self,id) :
         return True
 
     def get_value(self) :
-#        return self.lts_stage.get_position()
+        return self.lts_stage.get_position()
          return -1
 
     def get_step(self,id) :

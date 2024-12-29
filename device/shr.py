@@ -116,6 +116,8 @@ def to_bool(str: str) -> bool:
 # caseless (mostly for the ClientID and ClientTransactionID)
 # ---------------------------------------------------------
 def get_request_field(name: str, req: Request, caseless: bool = False, default: str = None) -> str:
+    import pdb 
+    pdb.set_trace()
     bad_desc = f'Missing, empty, or misspelled parameter "{name}"'
     lcName = name.lower()
     if req.method == 'GET':

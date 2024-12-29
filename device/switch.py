@@ -443,6 +443,7 @@ class setswitch:
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
+        print('req: ', req)
         
         idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
         try:
@@ -484,6 +485,7 @@ class setswitchname:
                             NotConnectedException()).json
             return
         
+        print('req: ', req)
         idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)

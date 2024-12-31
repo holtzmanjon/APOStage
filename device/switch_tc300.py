@@ -21,6 +21,7 @@ from exceptions import *        # Nothing but exception classes
 logger: Logger = None
 
 from tc300 import TC300
+from stage import Stage
 
 # ----------------------
 # MULTI-INSTANCE SUPPORT
@@ -51,7 +52,7 @@ switch_dev = None
 def start_switch_device(logger: logger):
     logger = logger
     global switch_dev
-    switch_dev = TC300(logger=logger)
+    switch_dev = [TC300(logger=logger),Stage()]
 
 # --------------------
 # RESOURCE CONTROLLERS
@@ -83,7 +84,7 @@ class connect:
         try:
             # ------------------------
             ### CONNECT THE DEVICE ###
-            switch_dev.connect()
+            switch_dev[devnum].connect()
             # ------------------------
             resp.text = MethodResponse(req).json
         except Exception as ex:
@@ -95,7 +96,7 @@ class connected:
     def on_get(self, req: Request, resp: Response, devnum: int):
         try:
             # -------------------------------------
-            is_conn = switch_dev.connected ### READ CONN STATE ###
+            is_conn = switch_dev[devnum].connected ### READ CONN STATE ###
             # -------------------------------------
             resp.text = PropertyResponse(is_conn, req).json
         except Exception as ex:
@@ -106,7 +107,7 @@ class connecting:
     def on_get(self, req: Request, resp: Response, devnum: int):
         try:
             # ------------------------------
-            val = switch_dev.connected ## GET CONNECTING STATE ##
+            val = switch_dev[devnum].connected ## GET CONNECTING STATE ##
             # ------------------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -122,7 +123,7 @@ class description:
 class devicestate:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -143,7 +144,7 @@ class disconnect:
         try:
             # ---------------------------
             ### DISCONNECT THE DEVICE ###
-            switch_dev.disconnect()
+            switch_dev[devnum].disconnect()
             # ---------------------------
             resp.text = MethodResponse(req).json
         except Exception as ex:
@@ -179,14 +180,14 @@ class supportedactions:
 class maxswitch:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
         
         try:
             # ----------------------
-            val = switch_dev.maxswitch ## GET PROPERTY ##
+            val = switch_dev[devnum].maxswitch ## GET PROPERTY ##
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -197,7 +198,7 @@ class maxswitch:
 class canwrite:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -209,14 +210,14 @@ class canwrite:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.canwrite(id)
+            val = switch_dev[devnum].canwrite(id)
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -227,7 +228,7 @@ class canwrite:
 class getswitch:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -239,14 +240,14 @@ class getswitch:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.getswitch(id) ## GET PROPERTY ##
+            val = switch_dev[devnum].getswitch(id) ## GET PROPERTY ##
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -257,7 +258,7 @@ class getswitch:
 class getswitchdescription:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -269,14 +270,14 @@ class getswitchdescription:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.get_description(id) ## GET PROPERTY ##
+            val = switch_dev[devnum].get_description(id) ## GET PROPERTY ##
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -287,7 +288,7 @@ class getswitchdescription:
 class getswitchname:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -299,14 +300,14 @@ class getswitchname:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.get_name(id)
+            val = switch_dev[devnum].get_name(id)
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -318,7 +319,7 @@ class getswitchvalue:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
         print('getswitchvalue on_get')
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -331,14 +332,14 @@ class getswitchvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.get_value(id) 
+            val = switch_dev[devnum].get_value(id) 
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -349,7 +350,7 @@ class getswitchvalue:
 class minswitchvalue:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -361,14 +362,14 @@ class minswitchvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.get_minvalue(id)
+            val = switch_dev[devnum].get_minvalue(id)
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -379,7 +380,7 @@ class minswitchvalue:
 class maxswitchvalue:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -391,14 +392,14 @@ class maxswitchvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.get_maxvalue(id)
+            val = switch_dev[devnum].get_maxvalue(id)
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -409,7 +410,7 @@ class maxswitchvalue:
 class switchstep:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -421,14 +422,14 @@ class switchstep:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
         try:
             # ----------------------
-            val = switch_dev.get_step(id)
+            val = switch_dev[devnum].get_step(id)
             # ----------------------
             resp.text = PropertyResponse(val, req).json
         except Exception as ex:
@@ -439,7 +440,7 @@ class switchstep:
 class setswitch:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
-        if not  switch_dev.connected :
+        if not  switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -453,7 +454,7 @@ class setswitch:
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         print(id)
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -469,7 +470,7 @@ class setswitch:
         try:
             #resp.text = MethodResponse(req, NotImplementedException()).json
             # -----------------------------
-            #switch_dev.set_switch(id)
+            #switch_dev[devnum].set_switch(id)
             # -----------------------------
             resp.text = MethodResponse(req).json
         except Exception as ex:
@@ -480,7 +481,7 @@ class setswitch:
 class setswitchname:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -493,7 +494,7 @@ class setswitchname:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -516,7 +517,7 @@ class setswitchvalue:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
         print('setswitchvalue on_put')
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -531,7 +532,7 @@ class setswitchvalue:
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         print('setswitchvalue on_put')
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -545,7 +546,7 @@ class setswitchvalue:
                             InvalidValueException(f'Value {valuestr} not a valid number.')).json
             return
         print('setswitchvalue on_put')
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -553,7 +554,7 @@ class setswitchvalue:
         print('setswitchvalue on_put')
         try:
             # -----------------------------
-            switch_dev.set_value(id,value)
+            switch_dev[devnum].set_value(id,value)
             # -----------------------------
             resp.text = MethodResponse(req).json
         except Exception as ex:
@@ -564,7 +565,7 @@ class setswitchvalue:
 class canasync:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -576,7 +577,7 @@ class canasync:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -594,7 +595,7 @@ class canasync:
 class statechangecomplete:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -606,7 +607,7 @@ class statechangecomplete:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -624,7 +625,7 @@ class statechangecomplete:
 class cancelasync:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -636,7 +637,7 @@ class cancelasync:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -654,7 +655,7 @@ class cancelasync:
 class setasync:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -666,7 +667,7 @@ class setasync:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -692,7 +693,7 @@ class setasync:
 class setasyncvalue:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
-        if not switch_dev.connected :
+        if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
@@ -704,7 +705,7 @@ class setasyncvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
@@ -716,7 +717,7 @@ class setasyncvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Value {valuestr} not a valid number.')).json
             return
-        if id < 0 or id > switch_dev.maxswitch -1 :
+        if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return

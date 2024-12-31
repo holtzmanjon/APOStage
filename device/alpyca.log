@@ -1,1 +1,13 @@
-2024-12-28T15:05:20.794 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
+2024-12-31T06:50:52.120 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
+2024-12-31T06:50:55.521 INFO Disc rcv alpacadiscovery1 from ('10.0.0.201', 63546)
+2024-12-31T06:50:55.541 INFO 10.0.0.201 <- [1]
+2024-12-31T06:50:55.550 INFO 10.0.0.201 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2024-12-31T06:50:55.555 INFO 10.0.0.201 <- [{'DeviceName': 'Thorlabs TC300 Temperature controller', 'DeviceType': 'Switch', 'DeviceNumber': 0, 'UniqueID': 'e32cca17-899f-401a-bb50-596db7f9a3ee'}]
+2024-12-31T06:50:58.590 INFO Disc rcv alpacadiscovery1 from ('10.0.0.201', 63546)
+2024-12-31T06:50:58.597 INFO 10.0.0.201 <- [1]
+2024-12-31T06:50:58.604 INFO 10.0.0.201 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2024-12-31T06:50:58.608 INFO 10.0.0.201 <- [{'DeviceName': 'Thorlabs TC300 Temperature controller', 'DeviceType': 'Switch', 'DeviceNumber': 0, 'UniqueID': 'e32cca17-899f-401a-bb50-596db7f9a3ee'}]
+2024-12-31T06:51:15.839 INFO 10.0.0.201 -> GET /api/v1/switch/0/interfaceversion?ClientID=1&ClientTransactionID=3
+2024-12-31T06:51:15.839 INFO 10.0.0.201 <- 3
+2024-12-31T06:51:15.874 INFO 10.0.0.201 -> GET /api/v1/switch/0/connecting?ClientID=1&ClientTransactionID=4
+2024-12-31T06:51:15.874 INFO 10.0.0.201 <- <bound method TC300.connected of <tc300.TC300 object at 0x108e45e20>>

@@ -5,7 +5,7 @@ class TC300() :
         """  Initialize dome properties and capabilities
         """
         print('init')
-        self.maxswitch = 1
+        self.maxswitch = 2
         self.description = 'Thorlabs TC 300'
         self.name = 'Iodine temperature'
         self.minswitchvalue = 0

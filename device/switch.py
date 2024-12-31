@@ -202,12 +202,12 @@ class canwrite:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -232,12 +232,12 @@ class getswitch:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -262,12 +262,12 @@ class getswitchdescription:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -292,12 +292,12 @@ class getswitchname:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -324,12 +324,12 @@ class getswitchvalue:
             return
         
         print('req: ',req)
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -354,12 +354,12 @@ class minswitchvalue:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -384,12 +384,12 @@ class maxswitchvalue:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -414,12 +414,12 @@ class switchstep:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -445,12 +445,12 @@ class setswitch:
             return
         print('req: ', req)
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         print(id)
         if id < 0 or id > switch_dev.maxswitch -1 :
@@ -486,12 +486,12 @@ class setswitchname:
             return
         
         print('req: ', req)
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -528,7 +528,7 @@ class setswitchvalue:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         print('setswitchvalue on_put')
         if id < 0 or id > switch_dev.maxswitch -1 :
@@ -569,12 +569,12 @@ class canasync:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -599,12 +599,12 @@ class statechangecomplete:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -629,12 +629,12 @@ class cancelasync:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -659,12 +659,12 @@ class setasync:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,
@@ -697,12 +697,12 @@ class setasyncvalue:
                             NotConnectedException()).json
             return
         
-        idstr = get_request_field('ID', req)      # Raises 400 bad request if missing
+        idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
-                            InvalidValueException(f'ID {idstr} not a valid integer.')).json
+                            InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
         if id < 0 or id > switch_dev.maxswitch -1 :
             resp.text = MethodResponse(req,

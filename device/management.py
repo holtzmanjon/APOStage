@@ -85,16 +85,16 @@ class configureddevices():
     def on_get(self, req: Request, resp: Response):
         confarray = [    # TODO ADD ONE FOR EACH DEVICE TYPE AND INSTANCE SERVED
             {
-            'DeviceName'    : SwitchMetadata1.Name,
-            'DeviceType'    : SwitchMetadata1.DeviceType,
+            'DeviceName'    : Switch1Metadata.Name,
+            'DeviceType'    : Switch1Metadata.DeviceType,
             'DeviceNumber'  : 0,
-            'UniqueID'      : SwitchMetadata1.DeviceID
+            'UniqueID'      : Switch1Metadata.DeviceID
             },
             {
-            'DeviceName'    : Switch2Metadata2.Name,
-            'DeviceType'    : Switch2Metadata2.DeviceType,
+            'DeviceName'    : Switch2Metadata.Name,
+            'DeviceType'    : Switch2Metadata.DeviceType,
             'DeviceNumber'  : 1,
-            'UniqueID'      : Switch2Metadata2.DeviceID
+            'UniqueID'      : Switch2Metadata.DeviceID
             }
         ]
         resp.text = PropertyResponse(confarray, req).json

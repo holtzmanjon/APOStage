@@ -221,7 +221,7 @@ def main():
     # Share this logger throughout
     log.logger = logger
     exceptions.logger = logger
-    switch.start_switch_device(logger)
+    switch_tc300.start_switch_device(logger)
     discovery.logger = logger
     set_shr_logger(logger)
 

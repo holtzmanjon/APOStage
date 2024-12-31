@@ -75,6 +75,7 @@ from shr import set_shr_logger
 #########################
 # FOR EACH ASCOM DEVICE #
 #########################
+import switch
 import switch_tc300
 
 #--------------
@@ -221,6 +222,7 @@ def main():
     # Share this logger throughout
     log.logger = logger
     exceptions.logger = logger
+    switch.start_switch_device(logger)
     switch_tc300.start_switch_device(logger)
     discovery.logger = logger
     set_shr_logger(logger)
@@ -229,6 +231,7 @@ def main():
     # FOR EACH ASCOM DEVICE #
     #########################
     switch_tc300.logger = logger
+    switch.logger = logger
 
     # -----------------------------
     # Last-Chance Exception Handler
@@ -251,6 +254,7 @@ def main():
     #########################
     # FOR EACH ASCOM DEVICE #
     #########################
+    init_routes(falc_app, 'switch', switch)
     init_routes(falc_app, 'switch', switch_tc300)
     #
     # Initialize routes for Alpaca support endpoints

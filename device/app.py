@@ -154,6 +154,7 @@ def init_routes(app: App, devname: str, module):
     """
 
     memlist = inspect.getmembers(module, inspect.isclass)
+    pdb.set_trace()
     for cname,ctype in memlist:
         # Only classes *defined* in the module and not the enum classes
         if ctype.__module__ == module.__name__ and not issubclass(ctype, IntEnum):
@@ -255,7 +256,7 @@ def main():
     # FOR EACH ASCOM DEVICE #
     #########################
     init_routes(falc_app, 'switch', switch_lts150)
-    init_routes(falc_app, 'switch2', switch_tc300)
+    init_routes(falc_app, 'switch2', [switch_tc300,switch_lts150])
     #
     # Initialize routes for Alpaca support endpoints
     falc_app.add_route('/management/apiversions', management.apiversions())

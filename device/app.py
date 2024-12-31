@@ -228,7 +228,7 @@ def main():
     #########################
     # FOR EACH ASCOM DEVICE #
     #########################
-    switch.logger = logger
+    switch_tc300.logger = logger
 
     # -----------------------------
     # Last-Chance Exception Handler

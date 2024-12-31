@@ -40,9 +40,12 @@ class TC300() :
         return self.maxswitchvalue
 
     def set_value(self,id,val) :
-        print('setting value',val)
         self.tc300.write('TSET{:d}={:s}\r'.format(id,val).encode())
         self.tc300.readline()
+        self.tc300.write('EN{:d}=1\r'.format(id,val).encode())
+        self.tc300.readline()
+
+    def set_enable(self,id,val) :
         self.tc300.write('EN{:d}=1\r'.format(id,val).encode())
         self.tc300.readline()
 
@@ -50,7 +53,7 @@ class TC300() :
         return True
 
     def get_value(self,id) :
-        return self.get_tact
+        return self.get_tact(id)
 
     def get_tset(self,id) :
         self.tc300.write('TSET{:d}?\r'.format(id).encode())

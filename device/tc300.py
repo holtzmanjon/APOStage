@@ -52,17 +52,17 @@ class TC300() :
     def get_value(self,id) :
         print('getting value')
         self.tc300.write('TSET{:d}?\r'.format(id).encode())
-        return self.tc300.readline()
+        return self.tc300.readline().strip(b'>').split()[0]
 
     def get_volt(self,id) :
         print('getting value')
         self.tc300.write('VOLT{:d}?\r'.format(id).encode())
-        return self.tc300.readline()
+        return self.tc300.readline().strip(b'>').split()[0]
 
     def get_current(self,id) :
         print('getting value')
         self.tc300.write('CURR{:d}?\r'.format(id).encode())
-        return self.tc300.readline()
+        return self.tc300.readline().strip(b'>').split()[0]
 
     def get_step(self,id) :
          return 0.1

@@ -48,6 +48,7 @@ from config import Config
 from logging import Logger
 # For each *type* of device served
 from switch_tc300 import SwitchMetadata
+from switch_lts150 import SwitchMetadata as Switch2Metadata
 
 logger: Logger = None
 #logger = None                   # Safe on Python 3.7 but no intellisense in VSCode etc.
@@ -88,6 +89,12 @@ class configureddevices():
             'DeviceType'    : SwitchMetadata.DeviceType,
             'DeviceNumber'  : 0,
             'UniqueID'      : SwitchMetadata.DeviceID
+            },
+            {
+            'DeviceName'    : Switch2Metadata.Name,
+            'DeviceType'    : Switch2Metadata.DeviceType,
+            'DeviceNumber'  : 0,
+            'UniqueID'      : Switch2Metadata.DeviceID
             }
         ]
         resp.text = PropertyResponse(confarray, req).json

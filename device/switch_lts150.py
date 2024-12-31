@@ -20,7 +20,6 @@ from exceptions import *        # Nothing but exception classes
 
 logger: Logger = None
 
-from tc300 import TC300
 from lts150 import Stage
 
 # ----------------------
@@ -39,11 +38,11 @@ maxdev = 1                      # Single instance
 # Static metadata not subject to configuration changes
 class SwitchMetadata:
     """ Metadata describing the Switch Device. Edit for your device"""
-    Name = 'Thorlabs TC300 Temperature controller'
+    Name = 'Thorlabs LTS Stage'
     Version = '1.0.0'
-    Description = 'LTS Temperature controller'
+    Description = 'LTS Stage'
     DeviceType = 'Switch'
-    DeviceID = 'e32cca17-899f-401a-bb50-596db7f9a3ee'
+    DeviceID = '75a88d87-15da-4d2f-94ba-612cd5bb0fea'
     Info = 'Alpaca Sample Device\nImplements ISwitch\nASCOM Initiative'
     MaxDeviceNumber = maxdev
     InterfaceVersion = 3
@@ -52,7 +51,7 @@ switch_dev = None
 def start_switch_device(logger: logger):
     logger = logger
     global switch_dev
-    switch_dev = TC300(logger=logger)
+    switch_dev = Stage(logger=logger)
 
 # --------------------
 # RESOURCE CONTROLLERS

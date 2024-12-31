@@ -251,7 +251,7 @@ def main():
     #########################
     # FOR EACH ASCOM DEVICE #
     #########################
-    init_routes(falc_app, 'switch', switch)
+    init_routes(falc_app, 'switch', switch_tc300)
     #
     # Initialize routes for Alpaca support endpoints
     falc_app.add_route('/management/apiversions', management.apiversions())

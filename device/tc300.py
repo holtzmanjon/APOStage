@@ -4,7 +4,7 @@ class TC300() :
     def __init__(self, logger=None ) :
         """  Initialize dome properties and capabilities
         """
-        print('init')
+        print('init TC300')
         self.maxswitch = 2
         self.description = 'Thorlabs TC 300'
         self.name = 'Iodine temperature'
@@ -13,7 +13,7 @@ class TC300() :
         self.connect(port='COM7')
 
     def connect(self,port='COM7') :
-        print('connect')
+        print('connect TC300')
         self.tc300=Serial(port,115200,timeout=1)
         self.connected = True
 

@@ -154,12 +154,10 @@ def init_routes(app: App, devname: str, module):
     """
 
     memlist = inspect.getmembers(module, inspect.isclass)
-    import pdb
     for cname,ctype in memlist:
         # Only classes *defined* in the module and not the enum classes
         if ctype.__module__ == module.__name__ and not issubclass(ctype, IntEnum):
             print(f'/api/v{API_VERSION}/{devname}/{{devnum:int(min=0)}}/{cname.lower()}')
-            pdb.set_trace()
             app.add_route(f'/api/v{API_VERSION}/{devname}/{{devnum:int(min=0)}}/{cname.lower()}', ctype())  # type() creates instance!
 
 

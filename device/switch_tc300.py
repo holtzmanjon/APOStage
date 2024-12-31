@@ -37,7 +37,7 @@ maxdev = 1                      # Single instance
 # DEVICE INFO
 # -----------
 # Static metadata not subject to configuration changes
-class SwitchMetadata:
+class Switch1Metadata:
     """ Metadata describing the Switch Device. Edit for your device"""
     Name = 'Thorlabs TC300 Temperature controller'
     Version = '1.0.0'
@@ -117,7 +117,7 @@ class connecting:
 @before(PreProcessRequest(maxdev))
 class description:
     def on_get(self, req: Request, resp: Response, devnum: int):
-        resp.text = PropertyResponse(SwitchMetadata.Description, req).json
+        resp.text = PropertyResponse(Switch1Metadata.Description, req).json
 
 @before(PreProcessRequest(maxdev))
 class devicestate:
@@ -154,22 +154,22 @@ class disconnect:
 @before(PreProcessRequest(maxdev))
 class driverinfo:
     def on_get(self, req: Request, resp: Response, devnum: int):
-        resp.text = PropertyResponse(SwitchMetadata.Info, req).json
+        resp.text = PropertyResponse(Switch1Metadata.Info, req).json
 
 @before(PreProcessRequest(maxdev))
 class interfaceversion:
     def on_get(self, req: Request, resp: Response, devnum: int):
-        resp.text = PropertyResponse(SwitchMetadata.InterfaceVersion, req).json
+        resp.text = PropertyResponse(Switch1Metadata.InterfaceVersion, req).json
 
 @before(PreProcessRequest(maxdev))
 class driverversion():
     def on_get(self, req: Request, resp: Response, devnum: int):
-        resp.text = PropertyResponse(SwitchMetadata.Version, req).json
+        resp.text = PropertyResponse(Switch1Metadata.Version, req).json
 
 @before(PreProcessRequest(maxdev))
 class name():
     def on_get(self, req: Request, resp: Response, devnum: int):
-        resp.text = PropertyResponse(SwitchMetadata.Name, req).json
+        resp.text = PropertyResponse(Switch1Metadata.Name, req).json
 
 @before(PreProcessRequest(maxdev))
 class supportedactions:

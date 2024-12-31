@@ -1,5 +1,4 @@
-try: import lts
-except : pass
+import lts
   
 class Stage() :
     def __init__(self, logger=None ) :
@@ -11,8 +10,7 @@ class Stage() :
         self.name = 'Iodine stage'
         self.minswitchvalue = 0
         self.maxswitchvalue = 1500
-        try: self.connect()
-        except: pass
+        self.connect()
 
     def connect(self) :
         print('connect LTS 150')

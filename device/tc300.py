@@ -1,5 +1,4 @@
-try: from serial import Serial
-except : pass
+from serial import Serial
   
 class TC300() :
     def __init__(self, logger=None ) :
@@ -11,8 +10,7 @@ class TC300() :
         self.name = 'Iodine temperature'
         self.minswitchvalue = 0
         self.maxswitchvalue = 80
-        try: self.connect(port='COM7')
-        except: pass
+        self.connect(port='COM7')
 
     def connect(self,port='COM7') :
         print('connect TC300')

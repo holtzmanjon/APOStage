@@ -40,13 +40,13 @@ class TC300() :
         return self.maxswitchvalue
 
     def set_value(self,id,val) :
-        self.tc300.write('TSET{:d}={:s}\r'.format(id,val).encode())
+        self.tc300.write('TSET{:d}={:s}\r'.format(id+1,val).encode())
         self.tc300.readline()
-        self.tc300.write('EN{:d}=1\r'.format(id,val).encode())
+        self.tc300.write('EN{:d}=1\r'.format(id+1,val).encode())
         self.tc300.readline()
 
     def set_enable(self,id,val) :
-        self.tc300.write('EN{:d}=1\r'.format(id,val).encode())
+        self.tc300.write('EN{:d}=1\r'.format(id+1,val).encode())
         self.tc300.readline()
 
     def getswitch(self,id) :
@@ -56,19 +56,19 @@ class TC300() :
         return self.get_tact(id)
 
     def get_tset(self,id) :
-        self.tc300.write('TSET{:d}?\r'.format(id).encode())
+        self.tc300.write('TSET{:d}?\r'.format(id+1).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
     def get_tact(self,id) :
-        self.tc300.write('TACT{:d}?\r'.format(id).encode())
+        self.tc300.write('TACT{:d}?\r'.format(id+1).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
     def get_volt(self,id) :
-        self.tc300.write('VOLT{:d}?\r'.format(id).encode())
+        self.tc300.write('VOLT{:d}?\r'.format(id+1).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
     def get_current(self,id) :
-        self.tc300.write('CURR{:d}?\r'.format(id).encode())
+        self.tc300.write('CURR{:d}?\r'.format(id+1).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
     def get_step(self,id) :

@@ -42,7 +42,7 @@ class SwitchMetadata:
     Version = '1.0.0'
     Description = 'LTS Temperature controller'
     DeviceType = 'Switch'
-    DeviceID = '75a88d87-15da-4d2f-94ba-612cd5bb0fea'
+    DeviceID = 'e32cca17-899f-401a-bb50-596db7f9a3ee'
     Info = 'Alpaca Sample Device\nImplements ISwitch\nASCOM Initiative'
     MaxDeviceNumber = maxdev
     InterfaceVersion = 3

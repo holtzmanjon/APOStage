@@ -154,6 +154,7 @@ def init_routes(app: App, devname: str, module):
     """
 
     memlist = inspect.getmembers(module, inspect.isclass)
+    import pdb
     pdb.set_trace()
     for cname,ctype in memlist:
         # Only classes *defined* in the module and not the enum classes

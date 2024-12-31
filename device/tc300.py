@@ -50,17 +50,21 @@ class TC300() :
         return True
 
     def get_value(self,id) :
-        print('getting value')
+        return self.get_tact
+
+    def get_tset(self,id) :
         self.tc300.write('TSET{:d}?\r'.format(id).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
+    def get_tact(self,id) :
+        self.tc300.write('TACT{:d}?\r'.format(id).encode())
+        return float(self.tc300.readline().strip(b'>').split()[0])
+
     def get_volt(self,id) :
-        print('getting value')
         self.tc300.write('VOLT{:d}?\r'.format(id).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
     def get_current(self,id) :
-        print('getting value')
         self.tc300.write('CURR{:d}?\r'.format(id).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 

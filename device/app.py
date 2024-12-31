@@ -75,7 +75,7 @@ from shr import set_shr_logger
 #########################
 # FOR EACH ASCOM DEVICE #
 #########################
-import switch
+import switch_tc300
 
 #--------------
 API_VERSION = 1

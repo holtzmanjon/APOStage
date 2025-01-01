@@ -63,7 +63,7 @@ class TC300() :
         self.tc300.write('TACT{:d}?\r'.format(id+1).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 
-    def get_volt(self,id) :
+    def get_voltage(self,id) :
         self.tc300.write('VOLT{:d}?\r'.format(id+1).encode())
         return float(self.tc300.readline().strip(b'>').split()[0])
 

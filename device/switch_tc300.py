@@ -72,7 +72,30 @@ def start_switch_device(logger: logger):
 @before(PreProcessRequest(maxdev))
 class action:
     def on_put(self, req: Request, resp: Response, devnum: int):
-        resp.text = MethodResponse(req, NotImplementedException()).json
+        if devnum == 0 :
+            idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
+            try:
+                id = int(idstr)
+            except:
+                resp.text = MethodResponse(req,
+                                InvalidValueException(f'Id {idstr} not a valid integer.')).json
+                return
+            if id < 0 or id > switch_dev[devnum].maxswitch -1 :
+                resp.text = MethodResponse(req,
+                                InvalidValueException(f'Id " + idstr + " not in range.')).json
+                return
+            try:
+                if req.get_media()['Action'] == 'get_voltage' :
+                    val = switch_dev[devnum].get_voltage(id)
+                    resp.text = PropertyResponse(val, req).json
+                elif req.get_media()['Action'] == 'get_current' :
+                    val = switch_dev[devnum].get_current(id)
+            except Exception as ex:
+                resp.text = PropertyResponse(None, req,
+                    DriverException(0x500, 'Switch.Action failed', ex)).json
+        else :
+            resp.text = MethodResponse(req, NotImplementedException()).json
+
 
 @before(PreProcessRequest(maxdev))
 class commandblind:
@@ -193,14 +216,17 @@ class driverversion():
 class name():
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(Switch2Metadata.Name, req).json
-        else :
             resp.text = PropertyResponse(Switch1Metadata.Name, req).json
+        else :
+            resp.text = PropertyResponse(Switch2Metadata.Name, req).json
 
 @before(PreProcessRequest(maxdev))
 class supportedactions:
     def on_get(self, req: Request, resp: Response, devnum: int):
-        resp.text = PropertyResponse([], req).json  # Not PropertyNotImplemented
+        if devnum == 0 :
+            resp.text = PropertyResponse(['get_voltage','get_current'], req).json  # Not PropertyNotImplemented
+        else :
+            resp.text = PropertyResponse([], req).json  # Not PropertyNotImplemented
 
 @before(PreProcessRequest(maxdev))
 class maxswitch:

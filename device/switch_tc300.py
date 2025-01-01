@@ -73,6 +73,7 @@ def start_switch_device(logger: logger):
 class action:
     def on_put(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
+            print(req)
             idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
             try:
                 id = int(idstr)
@@ -80,10 +81,13 @@ class action:
                 resp.text = MethodResponse(req,
                                 InvalidValueException(f'Id {idstr} not a valid integer.')).json
                 return
+            print(req)
             if id < 0 or id > switch_dev[devnum].maxswitch -1 :
                 resp.text = MethodResponse(req,
                                 InvalidValueException(f'Id " + idstr + " not in range.')).json
                 return
+            print(req)
+            print(req.get_media()['Action'])
             try:
                 if req.get_media()['Action'] == 'get_voltage' :
                     val = switch_dev[devnum].get_voltage(id)
@@ -370,13 +374,11 @@ class getswitchname:
 class getswitchvalue:
 
     def on_get(self, req: Request, resp: Response, devnum: int):
-        print('getswitchvalue on_get')
         if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
         
-        print('req: ',req)
         idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
@@ -496,7 +498,6 @@ class setswitch:
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
-        print('req: ', req)
         
         idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
@@ -505,7 +506,6 @@ class setswitch:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        print(id)
         if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
@@ -538,7 +538,6 @@ class setswitchname:
                             NotConnectedException()).json
             return
         
-        print('req: ', req)
         idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
         try:
             id = int(idstr)
@@ -568,28 +567,23 @@ class setswitchname:
 class setswitchvalue:
 
     def on_put(self, req: Request, resp: Response, devnum: int):
-        print('setswitchvalue on_put')
         if not switch_dev[devnum].connected :
             resp.text = PropertyResponse(None, req,
                             NotConnectedException()).json
             return
         
-        print('req: ',req)
         idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
-        print('setswitchvalue on_put')
         try:
             id = int(idstr)
         except:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id {idstr} not a valid integer.')).json
             return
-        print('setswitchvalue on_put')
         if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
-        print('setswitchvalue on_put')
         valuestr = get_request_field('Value', req)      # Raises 400 bad request if missing
         try:
             value = float(valuestr)
@@ -597,13 +591,11 @@ class setswitchvalue:
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Value {valuestr} not a valid number.')).json
             return
-        print('setswitchvalue on_put')
         if id < 0 or id > switch_dev[devnum].maxswitch -1 :
             resp.text = MethodResponse(req,
                             InvalidValueException(f'Id " + idstr + " not in range.')).json
             return
 
-        print('setswitchvalue on_put')
         try:
             # -----------------------------
             switch_dev[devnum].set_value(id,value)

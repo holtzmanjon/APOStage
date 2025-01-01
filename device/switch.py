@@ -85,9 +85,10 @@ class action:
                                 InvalidValueException(f'Id " + idstr + " not in range.')).json
                 return
             try:
-                if req.get_media()['Action'] == 'get_voltage' :
+                if req.get_media()['Action'] == 'get_tset' :
+                    val = switch_dev[devnum].get_tset(id)
+                elif req.get_media()['Action'] == 'get_voltage' :
                     val = switch_dev[devnum].get_voltage(id)
-                    resp.text = PropertyResponse(val, req).json
                 elif req.get_media()['Action'] == 'get_current' :
                     val = switch_dev[devnum].get_current(id)
                 resp.text = PropertyResponse(val, req).json
@@ -225,7 +226,7 @@ class name():
 class supportedactions:
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(['get_voltage','get_current'], req).json  # Not PropertyNotImplemented
+            resp.text = PropertyResponse(['get_tset','get_voltage','get_current'], req).json  # Not PropertyNotImplemented
         else :
             resp.text = PropertyResponse([], req).json  # Not PropertyNotImplemented
 

@@ -21,7 +21,7 @@ from exceptions import *        # Nothing but exception classes
 logger: Logger = None
 
 from tc300 import TC300
-from lts150 import Stage
+from lts150 import LTS150
 
 # ----------------------
 # MULTI-INSTANCE SUPPORT
@@ -37,7 +37,7 @@ maxdev = 1                      # Single instance
 # DEVICE INFO
 # -----------
 # Static metadata not subject to configuration changes
-class Switch1Metadata:
+class Switch0Metadata:
     """ Metadata describing the Switch Device. Edit for your device"""
     Name = 'Thorlabs TC300 Temperature controller'
     Version = '1.0.0'
@@ -48,7 +48,7 @@ class Switch1Metadata:
     MaxDeviceNumber = maxdev
     InterfaceVersion = 3
 
-class Switch2Metadata:
+class Switch1Metadata:
     """ Metadata describing the Switch Device. Edit for your device"""
     Name = 'Thorlabs LTS Stage'
     Version = '1.0.0'
@@ -63,7 +63,7 @@ switch_dev = None
 def start_switch_device(logger: logger):
     logger = logger
     global switch_dev
-    switch_dev = [TC300(logger=logger),Stage(logger=logger)]
+    switch_dev = [TC300(logger=logger),LTS150(logger=logger)]
 
 # --------------------
 # RESOURCE CONTROLLERS
@@ -153,9 +153,9 @@ class connecting:
 class description:
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(Switch1Metadata.Description, req).json
+            resp.text = PropertyResponse(Switch0Metadata.Description, req).json
         else :
-            resp.text = PropertyResponse(Switch2Metadata.Description, req).json
+            resp.text = PropertyResponse(Switch1Metadata.Description, req).json
 
 @before(PreProcessRequest(maxdev))
 class devicestate:
@@ -193,33 +193,33 @@ class disconnect:
 class driverinfo:
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(Switch1Metadata.Info, req).json
+            resp.text = PropertyResponse(Switch0Metadata.Info, req).json
         else :
-            resp.text = PropertyResponse(Switch2Metadata.Info, req).json
+            resp.text = PropertyResponse(Switch1Metadata.Info, req).json
 
 @before(PreProcessRequest(maxdev))
 class interfaceversion:
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(Switch1Metadata.InterfaceVersion, req).json
+            resp.text = PropertyResponse(Switch0Metadata.InterfaceVersion, req).json
         else :
-            resp.text = PropertyResponse(Switch2Metadata.InterfaceVersion, req).json
+            resp.text = PropertyResponse(Switch1Metadata.InterfaceVersion, req).json
 
 @before(PreProcessRequest(maxdev))
 class driverversion():
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(Switch1Metadata.Version, req).json
+            resp.text = PropertyResponse(Switch0Metadata.Version, req).json
         else :
-            resp.text = PropertyResponse(Switch2Metadata.Version, req).json
+            resp.text = PropertyResponse(Switch1Metadata.Version, req).json
 
 @before(PreProcessRequest(maxdev))
 class name():
     def on_get(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            resp.text = PropertyResponse(Switch1Metadata.Name, req).json
+            resp.text = PropertyResponse(Switch0Metadata.Name, req).json
         else :
-            resp.text = PropertyResponse(Switch2Metadata.Name, req).json
+            resp.text = PropertyResponse(Switch1Metadata.Name, req).json
 
 @before(PreProcessRequest(maxdev))
 class supportedactions:

@@ -47,8 +47,7 @@ from shr import PropertyResponse, DeviceMetadata
 from config import Config
 from logging import Logger
 # For each *type* of device served
-from switch_tc300 import Switch1Metadata
-from switch_lts150 import Switch2Metadata
+from switch import Switch0Metadata, Switch1Metadata
 
 logger: Logger = None
 #logger = None                   # Safe on Python 3.7 but no intellisense in VSCode etc.
@@ -85,16 +84,16 @@ class configureddevices():
     def on_get(self, req: Request, resp: Response):
         confarray = [    # TODO ADD ONE FOR EACH DEVICE TYPE AND INSTANCE SERVED
             {
-            'DeviceName'    : Switch1Metadata.Name,
-            'DeviceType'    : Switch1Metadata.DeviceType,
+            'DeviceName'    : Switch0Metadata.Name,
+            'DeviceType'    : Switch0Metadata.DeviceType,
             'DeviceNumber'  : 0,
-            'UniqueID'      : Switch1Metadata.DeviceID
+            'UniqueID'      : Switch0Metadata.DeviceID
             },
             {
-            'DeviceName'    : Switch2Metadata.Name,
-            'DeviceType'    : Switch2Metadata.DeviceType,
+            'DeviceName'    : Switch1Metadata.Name,
+            'DeviceType'    : Switch1Metadata.DeviceType,
             'DeviceNumber'  : 1,
-            'UniqueID'      : Switch2Metadata.DeviceID
+            'UniqueID'      : Switch1Metadata.DeviceID
             }
         ]
         resp.text = PropertyResponse(confarray, req).json

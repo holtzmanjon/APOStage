@@ -1,10 +1,9 @@
 import lts
   
-class Stage() :
+class LTS150() :
     def __init__(self, logger=None ) :
         """  Initialize dome properties and capabilities
         """
-        print('init LTS 150')
         self.maxswitch = 1
         self.description = 'Thorlabs LTS 150'
         self.name = 'Iodine stage'

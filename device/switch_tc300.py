@@ -73,23 +73,17 @@ def start_switch_device(logger: logger):
 class action:
     def on_put(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            print(req)
-            import pdb
-            pdb.set_trace()
-            idstr = get_request_field('Id', req)      # Raises 400 bad request if missing
+            idstr = get_request_field('Parameters', req)      # Raises 400 bad request if missing
             try:
                 id = int(idstr)
             except:
                 resp.text = MethodResponse(req,
                                 InvalidValueException(f'Id {idstr} not a valid integer.')).json
                 return
-            print(req)
             if id < 0 or id > switch_dev[devnum].maxswitch -1 :
                 resp.text = MethodResponse(req,
                                 InvalidValueException(f'Id " + idstr + " not in range.')).json
                 return
-            print(req)
-            print(req.get_media()['Action'])
             try:
                 if req.get_media()['Action'] == 'get_voltage' :
                     val = switch_dev[devnum].get_voltage(id)

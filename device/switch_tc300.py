@@ -73,6 +73,8 @@ def start_switch_device(logger: logger):
 class action:
     def on_put(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
+            import pdb
+            pdb.set_trace()
             idstr = get_request_field('Parameters', req)      # Raises 400 bad request if missing
             try:
                 id = int(idstr)

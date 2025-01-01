@@ -73,8 +73,6 @@ def start_switch_device(logger: logger):
 class action:
     def on_put(self, req: Request, resp: Response, devnum: int):
         if devnum == 0 :
-            import pdb
-            pdb.set_trace()
             idstr = get_request_field('Parameters', req)      # Raises 400 bad request if missing
             try:
                 id = int(idstr)
@@ -92,6 +90,7 @@ class action:
                     resp.text = PropertyResponse(val, req).json
                 elif req.get_media()['Action'] == 'get_current' :
                     val = switch_dev[devnum].get_current(id)
+                resp.text = PropertyResponse(val, req).json
             except Exception as ex:
                 resp.text = PropertyResponse(None, req,
                     DriverException(0x500, 'Switch.Action failed', ex)).json
